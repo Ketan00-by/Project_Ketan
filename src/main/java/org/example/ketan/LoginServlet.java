@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -23,13 +24,23 @@ public class LoginServlet extends HttpServlet {
              try {
                  List<Employee>list=ed.fetchEmployeeData();
                  request.setAttribute("emp",list);
+
+                 HttpSession session = request.getSession();
+                 session.setAttribute("username", Username);
+                 session.setAttribute("employees", list);
+
                  RequestDispatcher rd= request.getRequestDispatcher("Employee.jsp");
                  rd.forward(request,response);
                  System.out.println(ed.fetchEmployeeData());
              } catch (Exception e) {
                  System.out.println(e.getLocalizedMessage());
+                 e.printStackTrace();
              }
         }
-
+     else {
+        // Handle invalid login
     }
+
+
+}
 }
