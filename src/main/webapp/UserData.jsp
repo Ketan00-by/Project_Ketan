@@ -3,32 +3,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Employee</title>
-    <style>
-        h2{
-            text-align: center;
-        }
-        table {
-            border-collapse: collapse;
-            width: 50%;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .logoutb{
-            text-align: center;
-
-        }
-    </style>
+    <title>UserData</title>
 </head>
 <body>
-<h2>Welcome <%= session.getAttribute("Username") %></h2>
+<h2>Welcome <%= session.getAttribute("username") %></h2>
 <table>
     <thead>
     <tr>
@@ -50,6 +28,9 @@
     <% } %>
     </tbody>
 </table>
-<a href="logout" class="logoutb"><button>Logout</button></a>
+
+<form action="logout" method="post">
+    <input type="submit" value="Logout">
+</form>
 </body>
 </html>

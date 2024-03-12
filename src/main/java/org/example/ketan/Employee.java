@@ -29,16 +29,16 @@ public class Employee {
         Age = age;
     }
 
-    public int getPhone_no() {
+    public long getPhone_no() {
         return Phone_no;
     }
 
-    public void setPhone_no(int phone_no) {
+    public void setPhone_no(long phone_no) {
         Phone_no = phone_no;
     }
 
     private int Age;
-    private int Phone_no;
+    private long Phone_no;
 }
 
 

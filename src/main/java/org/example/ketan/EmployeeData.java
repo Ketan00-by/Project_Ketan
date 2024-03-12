@@ -18,7 +18,7 @@ public class EmployeeData {
                 int id= rs.getInt("id");
                 String Username= rs.getString("Username");
                 int Age= rs.getInt("Age");
-                int Phone_no= rs.getInt("Phone_no");
+                long Phone_no= rs.getLong("Phone_no");
                 Employee e=new Employee();
                 e.setId(id);
                 e.setUsername(Username);
@@ -27,6 +27,7 @@ public class EmployeeData {
                 List.add(e);
             }
             return List;
+
         }
     }
 
